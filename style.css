@@ -1,0 +1,14 @@
+:root {
+    --charcoal: #323949ff;
+    --gunmetal: #313644ff;
+    --gunmetal-2: #2f343eff;
+    --gunmetal-3: #2e3139ff;
+    --onyx: #2c2e33ff;
+    --jet: #2b2c2eff;
+    --jet-2: #292928ff;
+}
+
+* {
+    color: white;
+    background-color: var(--onyx);
+}
