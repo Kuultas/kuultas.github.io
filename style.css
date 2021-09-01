@@ -1,14 +1,127 @@
-:root {
-    --charcoal: #323949ff;
-    --gunmetal: #313644ff;
-    --gunmetal-2: #2f343eff;
-    --gunmetal-3: #2e3139ff;
-    --onyx: #2c2e33ff;
-    --jet: #2b2c2eff;
-    --jet-2: #292928ff;
+/* lots of hacky solutions lol  */
+
+#video-container {
+  overflow: hidden;
 }
 
 * {
-    color: white;
-    background-color: var(--onyx);
+  color: white;
+  font-family: "Cutive Mono", monospace;
+  font-size: 17px;
+}
+
+body {
+  background-color: rgb(14, 14, 14);
+}
+
+video {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 100%;
+  filter: blur(1rem) brightness(0.3);
+  z-index: -1;
+  object-fit: contain;
+}
+
+.page-container {
+  display: grid;
+  grid:
+    "header header header"
+    "navLeft content content"
+    "footer footer footer";
+  grid-template-columns: 200px 75vw;
+  grid-template-rows: 150px 75vh 10vh;
+  grid-gap: 10px;
+  overflow: hidden;
+  /*  background-color: rgba(255, 255, 255, 0.068); */
+}
+
+.header-container {
+  /* background-color: rgba(255, 255, 255, 0.068); */
+  grid-area: header;
+  padding-left: 25px;
+}
+
+.logo {
+  display: inline-block;
+  /* background-color: rgba(255, 255, 255, 0.068); */
+}
+
+.nav-container-left {
+  /* background-color: rgba(255, 255, 255, 0.068); */
+  grid-area: navLeft;
+  padding-top: 25px;
+  padding-left: 25px;
+}
+
+.nav-item {
+  margin-bottom: 15px;
+  cursor: crosshair;
+  /* background-color: rgba(255, 255, 255, 0.068); */
+}
+
+.page-content-container {
+  /* background-color: rgba(255, 255, 255, 0.068); */
+  grid-area: content;
+
+  padding-left: 25px;
+  overflow: hidden;
+}
+
+.footer-container {
+  /* background-color: rgba(255, 255, 255, 0.068); */
+  grid-area: footer;
+  padding-top: 25px;
+  padding-left: 25px;
+  color: rgba(255, 255, 255, 0.432);
+}
+
+a {
+  text-decoration: none;
+  /* background-color: rgba(255, 255, 255, 0.068); */
+}
+
+ul {
+  margin-top: 0;
+  padding: 0;
+  /* background-color: rgba(255, 255, 255, 0.068); */
+}
+
+li {
+  list-style: none;
+  /* background-color: rgba(255, 255, 255, 0.068); */
+}
+
+li:hover {
+  color: rgba(255, 102, 0, 0.87);
+}
+
+h1 {
+  /* background-color: rgba(255, 255, 255, 0.068); */
+  font-size: 48px;
+  font-weight: normal;
+  cursor: crosshair;
+}
+
+h1:hover {
+  color: rgba(255, 102, 0, 0.87);
+}
+
+.page-content-item {
+  /* background-color: rgba(255, 255, 255, 0.068); */
+  height: 1000px;
+}
+
+#about {
+  padding-top: 25px;
+}
+
+#contact {
+  padding-top: 25px;
+}
+
+#projects {
+  padding-top: 25px;
 }
