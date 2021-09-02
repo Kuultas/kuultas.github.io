@@ -7,36 +7,55 @@
     <title>bisztray | dev</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Cutive+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
     <div id="video-container">
-        <video src="forest.webm" autoplay muted loop></video>
+        <video src="water.mp4" id="bg-video"autoplay muted loop></video>
     </div>
     <div class="page-container">
-        <div class="header-container">
-            <div class="logo">
-                <h1>alex bisztray</h1>
-            </div>
-        </div>
-        <div class="nav-container-left">
-            <nav class="nav-list-left">
-                <ul class="nav-list">
-                    <a href="#about"><li class="nav-item">about</li></a>
-                    <a href="#contact"><li class="nav-item">contact</li></a>
-                    <a href="#projects"><li class="nav-item">projects</li></a>
+        <div class="page-wrapper">
+            <section id="header">
+                <h1 onclick="changeBg()">alex bisztray</h1>
+            </section>
+            <section id="about">
+                <h3 class="section-title" id="title">about</h3>
+                <span id="desc">i'm a web developer based in toronto <br> i like solving problems</span>
+            </section>
+            <section id="contact">
+                <h3 class="section-title" id="title">contact</h3>
+                <span id="desc">you can reach me at: <spoiler>alex@bisztray.com</spoiler></span><br>
+                <span id="desc">as well as at: 
+                    <div>
+                    <a href="https://github.com/Kuultas" target="#"><i class="fab fa-github"></i></a>
+                    <a href="https://twitter.com/bisztraya" target="#"><i class="fab fa-twitter"></i></a></i>
+                    </div>
+                </span>
+            </section>
+            <section id="projects">
+                <h3 class="section-title" id="title">projects</h3>
+                <ul id="projects-list">
+                    <a href="#" class="project"><li>sample-project-1</li></a>
+                    <a href="#" class="project"><li>sample-project-2</li></a>
+                    <a href="#" class="project"><li>sample-project-3</li></a>
+                    <a href="#" class="project"><li>sample-project-4</li></a>
+                    <a href="#" class="project"><li>sample-project-5</li></a>
+                    <a href="#" class="project"><li>sample-project-6</li></a>
+                    <a href="#" class="project"><li>sample-project-7</li></a>
+                    <a href="#" class="project"><li>sample-project-8</li></a>
                 </ul>
-            </nav>
-        </div>
-        <div class="page-content-container">
-                <div id="about" class="page-content-item">i'm a web developer based in Toronto <br> i like solving problems</div>
-                <div id="contact" class="page-content-item">
-                    content
-                </div>
-                <div id="projects" class="page-content-item">projects</div>
-        </div>
-        <div class="footer-container">
-            email: alex at this domain
+            </section>
         </div>
     </div>
+
+    <script>
+        function changeBg() {
+            let vids = ["water.mp4", "cave.mp4", "forest.webm"];
+            let rnd = Math.floor(Math.random() * 3);
+
+            let source = document.getElementById("bg-video");
+            source.setAttribute('src', vids[rnd]);
+        }
+    </script>
 </body>
 </html>
