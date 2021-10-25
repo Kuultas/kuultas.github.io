@@ -39,7 +39,7 @@
         min-height: 100%;
         filter: blur(1rem) brightness(0.3);
         z-index: -1;
-        object-fit: contain;
+        object-fit: cover;
         }
 
         .page-container {
@@ -164,7 +164,7 @@
         }
     </style>
     <div id="video-container">
-        <video src="assets/water.mp4" id="bg-video"autoplay muted loop></video>
+        <video src="assets/rainy-nights.mp4" id="bg-video"autoplay muted loop></video>
     </div>
     <div class="page-container">
         <div class="page-wrapper">
@@ -188,7 +188,7 @@
             <section id="projects">
                 <h3 class="section-title" id="title">projects</h3>
                 <ul id="projects-list">
-                    <a href="#" class="project"><li>sample-project-1</li></a>
+                    <a href="https://pathfinding-viz-kuultas.netlify.app/" class="project"><li>pathfinding visualizer</li></a>
                     <a href="#" class="project"><li>sample-project-2</li></a>
                     <a href="#" class="project"><li>sample-project-3</li></a>
                     <a href="#" class="project"><li>sample-project-4</li></a>
@@ -203,9 +203,8 @@
 
     <script>
         function changeBg() {
-            let vids = ["assets/water.mp4", "assets/cave.webm", "assets/forest.webm"];
-            let rnd = Math.floor(Math.random() * 3);
-
+            let vids = ["assets/aerial-water.mp4", "assets/water.mp4", "assets/cave.webm", "assets/forest.webm"];
+            let rnd = Math.floor(Math.random() * 4);
             let source = document.getElementById("bg-video");
             source.setAttribute('src', vids[rnd]);
         }
