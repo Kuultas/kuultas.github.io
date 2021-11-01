@@ -1,213 +1,160 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>bisztray | dev</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cutive+Mono&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-</head>
-<body>
-    <style>
-        #video-container {
-        overflow: hidden;
-        }
-
-        * {
-        color: white;
-        font-family: "Cutive Mono", monospace;
-        font-size: 17px;
-        }
-
-        @media screen and (max-width: 600px) {
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>bisztray | dev</title>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Cutive+Mono&amp;display=swap"
+            rel="stylesheet"
+        />
+        <link rel="icon" href="favicon.png" />
+        <style>
             * {
-                font-size: 14px;
+                color: #fff;
+                font-family: 'Cutive Mono', monospace;
+                font-weight: 200;
             }
-        }
 
-        body {
-        background-color: rgb(14, 14, 14);
-    
-        }
-
-        video {
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        min-width: 100%;
-        min-height: 100%;
-        filter: blur(1rem) brightness(0.3);
-        z-index: -1;
-        object-fit: cover;
-        }
-
-        .page-container {
-        display: flex;
-        height: 100vh;
-        width: 100vw;
-        align-items: center;
-        justify-content: center;
-        max-width: 100%;
-        }
-
-        .page-wrapper {
-        padding: 25px;
-        display: flex;
-        flex-direction: column;
-        align-items: left;
-        max-width: 400px;
-        }
-
-        ul {
-        padding: 0;
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        list-style: none;
-        }
-
-        #projects-list {
-        display: flex;
-        justify-content: space-between;
-        }
-
-        #desc {
-        display: flex;
-        justify-content: space-between;
-        }
-
-        a {
-        text-decoration: none;
-        }
-
-        li {
-        transition: 0.2s;
-        }
-
-        li:hover {
-        cursor: crosshair;
-        color: orange;
-        transition: 0.2s;
-        }
-
-        h1 {
-        font-weight: normal;
-        font-size: 30px;
-        transition: 0.2s;
-        display: inline-block;
-        }
-
-        @media screen and (max-width: 600px) {
-            h1 {
-                font-size: 28px;
+            body {
+                background-color: rgb(26, 26, 26);
+                margin: 0;
+                padding: 0;
             }
-        }
-    
 
-        h1:hover {
-        color: orange;
-        cursor: crosshair;
-        transition: 0.2s;
-        }
-
-        h3 {
-        font-weight: normal;
-        font-size: 24px;
-        transition: 0.2s;
-        }
-
-        h3:hover {
-        color: rgba(255, 255, 255, 0.678);
-        font-weight: normal;
-        transition: 0.2s;
-        }
-
-        @media screen and (max-width: 600px) {
-            h3 {
-                font-size: 20px;
+            #page-title {
+                width: 55%;
+                cursor: crosshair;
             }
-        }
 
-        .fab {
-        font-size: 24px;
-        transition: 0.2s;
-        }
+            .page-container {
+                display: flex;
+                width: 100vw;
+                height: 100vh;
+                align-items: center;
+                justify-content: center;
+            }
 
-        .fab:hover {
-        color: orange;
-        transition: 0.2s;
-        }
+            .page-wrapper {
+                width: 50%;
+                display: flex;
+                flex-direction: column;
+            }
 
-        spoiler {
-        background-color: rgba(255, 166, 0, 0.678);
-        color: rgba(255, 255, 255, 0);
-        transition: 0.8s;
-        border-radius: 5px;
-        }
+            ul {
+                list-style: none;
+                padding: 0;
+            }
 
-        spoiler:hover {
-        color: white;
-        background-color: transparent;
-        transition: 0.3s;
-        border-radius: 5px;
-        }
+            a {
+                text-decoration-color: rgba(255, 166, 0, 0.603);
+                cursor: crosshair;
+            }
 
-        @media screen and (max-width: 600px) {
+            p {
+                line-height: 1.5;
+            }
+
+            video {
+                position: fixed;
+                bottom: 0;
+                left: 0;
+                min-width: 100%;
+                min-height: 100%;
+                filter: blur(1rem) brightness(0.3);
+                z-index: -1;
+                object-fit: cover;
+            }
+
             spoiler {
-                height: 15px;
+                background-color: rgba(255, 166, 0, 0.678);
+                color: rgba(255, 255, 255, 0);
+                transition: 0.8s;
+                border-radius: 5px;
             }
-        }
 
-        i:hover {
-        cursor: crosshair;
-        }
-    </style>
-    <div id="video-container">
-        <video src="assets/rainy-nights.mp4" id="bg-video"autoplay muted loop></video>
-    </div>
-    <div class="page-container">
-        <div class="page-wrapper">
-            <section id="header">
-                <h1 onclick="changeBg()">alex bisztray</h1>
-            </section>
-            <section id="about">
-                <h3 class="section-title" id="title">about</h3>
-                <span id="desc">i'm a web developer based in toronto <br> i like solving problems</span>
-            </section>
-            <section id="contact">
-                <h3 class="section-title" id="title">contact</h3>
-                <span id="desc">you can reach me at: <spoiler>alex@bisztray.com</spoiler></span><br>
-                <span id="desc">as well as at: 
-                    <div>
-                    <a href="https://github.com/Kuultas" target="#"><i class="fab fa-github"></i></a>
-                    <a href="https://twitter.com/bisztraya" target="#"><i class="fab fa-twitter"></i></a></i>
-                    </div>
-                </span>
-            </section>
-            <section id="projects">
-                <h3 class="section-title" id="title">projects</h3>
-                <ul id="projects-list">
-                    <a href="https://pathfinding-viz-kuultas.netlify.app/" class="project"><li>pathfinding visualizer</li></a>
-                    <a href="#" class="project"><li>sample-project-2</li></a>
-                    <a href="#" class="project"><li>sample-project-3</li></a>
-                    <a href="#" class="project"><li>sample-project-4</li></a>
-                    <a href="#" class="project"><li>sample-project-5</li></a>
-                    <a href="#" class="project"><li>sample-project-6</li></a>
-                    <a href="#" class="project"><li>sample-project-7</li></a>
-                    <a href="#" class="project"><li>sample-project-8</li></a>
-                </ul>
-            </section>
+            spoiler:hover {
+                color: white;
+                background-color: transparent;
+                transition: 0.3s;
+                border-radius: 5px;
+            }
+
+            #video-container {
+                overflow: hidden;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="video-container">
+            <video
+                src="assets/train.m4v"
+                id="bg-video"
+                autoplay=""
+                muted=""
+                loop=""
+            ></video>
         </div>
-    </div>
+        <div class="page-container">
+            <div class="page-wrapper">
+                <h1 id="page-title" onClick="{changeBg()}">alex bisztray</h1>
+                <section id="about">
+                    <h3 id="about-title">about</h3>
+                    <p id="about-text">
+                        i'm a web developer based in toronto <br />
+                        i like solving problems
+                    </p>
+                </section>
+                <section id="contact">
+                    <h3 id="contact-title">contact</h3>
+                    <p id="contact-text">
+                        you can reach me at:
+                        <spoiler id="contact-spoiler"
+                            >alex@bisztray.com</spoiler
+                        >
+                        <br />
+                        and find me on:
+                        <a
+                            href="https://twitter.com/bisztraya"
+                            target="_blank"
+                            class="social-link"
+                            >twitter</a
+                        >,
+                        <a
+                            href="https://github.com/kuultas"
+                            target="_blank"
+                            class="social-link"
+                            >github</a
+                        >
+                    </p>
+                </section>
+                <section id="projects">
+                    <h3 id="projects-title">projects</h3>
+                    <ul id="projects-list">
+                        <li>
+                            <a href="https://pfviz.netlify.app/" target="_blank"
+                                >pathfinding visualizer</a
+                            >
+                        </li>
+                    </ul>
+                </section>
+            </div>
+        </div>
 
-    <script>
-        function changeBg() {
-            let vids = ["assets/aerial-water.mp4", "assets/water.mp4", "assets/cave.webm", "assets/forest.webm"];
-            let rnd = Math.floor(Math.random() * 4);
-            let source = document.getElementById("bg-video");
-            source.setAttribute('src', vids[rnd]);
-        }
-    </script>
-</body>
+        <script>
+            function changeBg() {
+                let vids = [
+                    'assets/train.m4v',
+                    'assets/city-snow.m4v',
+                    'assets/evening-traffic.m4v',
+                    'assets/forest.mp4',
+                    'assets/window-rain.m4v',
+                ];
+                let rnd = Math.floor(Math.random() * 5);
+                let source = document.getElementById('bg-video');
+                source.setAttribute('src', vids[rnd]);
+            }
+        </script>
+    </body>
 </html>
