@@ -147,6 +147,7 @@
         </div>
 
         <script>
+            let curr = 1;
             function changeBg() {
                 let vids = [
                     'assets/city-snow.m4v',
@@ -155,8 +156,12 @@
                     'assets/forest.mp4',
                     'assets/window-rain.m4v',
                 ];
-                let rnd = Math.floor(Math.random() * 5);
                 let source = document.getElementById('bg-video');
+                source.src = vids[curr];
+                curr++;
+                if (curr >= vids.length) {
+                    curr = 0;
+                }
                 source.setAttribute('src', vids[rnd]);
             }
         </script>
