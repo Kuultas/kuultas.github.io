@@ -5,100 +5,14 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>bisztray | dev</title>
-        <link
-            href="https://fonts.googleapis.com/css2?family=Cutive+Mono&amp;display=swap"
-            rel="stylesheet"
-        />
+        <link href="https://fonts.googleapis.com/css2?family=Cutive+Mono&amp;display=swap" rel="stylesheet" />
         <link rel="icon" href="favicon.png" />
-        <style>
-            * {
-                color: #fff;
-                font-family: 'Cutive Mono', monospace;
-                font-weight: 200;
-            }
-
-            *::selection {
-                background-color: rgba(255, 165, 0, 0.5);
-            }
-
-            body {
-                background-color: rgb(12, 12, 12);
-                margin: 0;
-                padding: 0;
-            }
-
-            #page-title {
-                width: max-content;
-                cursor: crosshair;
-            }
-
-            .page-container {
-                display: flex;
-                width: 100vw;
-                height: 100vh;
-                align-items: center;
-                justify-content: center;
-            }
-
-            .page-wrapper {
-                width: max-content;
-                display: flex;
-                flex-direction: column;
-            }
-
-            ul {
-                list-style: none;
-                padding: 0;
-            }
-
-            a {
-                text-decoration-color: rgba(255, 165, 0, 0.5);
-                cursor: crosshair;
-            }
-
-            p {
-                line-height: 1.5;
-            }
-
-            video {
-                position: fixed;
-                bottom: 0;
-                left: 0;
-                min-width: 100%;
-                min-height: 100%;
-                filter: blur(1rem) brightness(0.45);
-                z-index: -1;
-                object-fit: cover;
-            }
-
-            spoiler {
-                background-color: rgba(255, 166, 0, 0.678);
-                color: rgba(255, 255, 255, 0);
-                transition: 0.8s;
-                border-radius: 5px;
-            }
-
-            spoiler:hover {
-                color: white;
-                background-color: transparent;
-                transition: 0.3s;
-                border-radius: 5px;
-            }
-
-            #video-container {
-                overflow: hidden;
-            }
-        </style>
+        <link rel="stylesheet" href="assets/css/style.css" />
+        <script src="assets/js/script.js"></script>
     </head>
     <body>
         <div id="video-container">
-            <video
-                src="assets/city-snow.m4v"
-                id="bg-video"
-                autoplay=""
-                muted=""
-                loop=""
-            ></video>
+            <video src="assets/videos/city-snow.m4v" id="bg-video" autoplay="" muted="" loop=""></video>
         </div>
         <div class="page-container">
             <div class="page-wrapper">
@@ -106,7 +20,7 @@
                 <section id="about">
                     <h3 id="about-title">about</h3>
                     <p id="about-text">
-                        i'm a web developer based in toronto <br />
+                        i'm a software developer based in toronto <br />
                         i like solving problems
                     </p>
                 </section>
@@ -114,55 +28,23 @@
                     <h3 id="contact-title">contact</h3>
                     <p id="contact-text">
                         you can reach me at:
-                        <spoiler id="contact-spoiler"
-                            >alex@bisztray.com</spoiler
-                        >
+                        <spoiler id="contact-spoiler">alex@bisztray.com</spoiler>
                         <br />
                         and find me on:
-                        <a
-                            href="https://twitter.com/bisztraya"
-                            target="_blank"
-                            class="social-link"
-                            >twitter</a
-                        >,
-                        <a
-                            href="https://github.com/kuultas"
-                            target="_blank"
-                            class="social-link"
-                            >github</a
-                        >
+                        <a href="https://twitter.com/bisztraya" target="_blank" class="social-link">twitter</a>,
+                        <a href="https://github.com/kuultas" target="_blank" class="social-link">github</a>
                     </p>
                 </section>
                 <section id="projects">
                     <h3 id="projects-title">projects</h3>
                     <ul id="projects-list">
                         <li>
-                            <a href="https://pfviz.netlify.app/" target="_blank"
-                                >pathfinding visualizer</a
-                            >
+                            <a href="https://pfviz.netlify.app/" target="_blank">pathfinding visualizer</a>
                         </li>
                     </ul>
                 </section>
             </div>
         </div>
-
-        <script>
-            let curr = 1;
-            function changeBg() {
-                let vids = [
-                    'assets/city-snow.m4v',
-                    'assets/evening-traffic.m4v',
-                    'assets/train.m4v',
-                    'assets/forest.mp4',
-                    'assets/window-rain.m4v',
-                ];
-                let source = document.getElementById('bg-video');
-                source.src = vids[curr];
-                curr++;
-                if (curr >= vids.length) {
-                    curr = 0;
-                }
-            }
-        </script>
     </body>
+
 </html>
