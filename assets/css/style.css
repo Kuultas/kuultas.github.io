@@ -39,8 +39,8 @@ ul {
 }
 
 a {
-    text-decoration-color: rgba(255, 165, 0, 0.5);
-    cursor: crosshair;
+    text-decoration: none;
+    color: rgba(255, 165, 0);
 }
 
 p {
@@ -62,20 +62,6 @@ video {
     video {
         display: none;
     }
-}
-
-spoiler {
-    background-color: rgba(255, 166, 0, 0.678);
-    color: rgba(255, 255, 255, 0);
-    transition: 0.8s;
-    border-radius: 5px;
-}
-
-spoiler:hover {
-    color: white;
-    background-color: transparent;
-    transition: 0.3s;
-    border-radius: 5px;
 }
 
 #video-container {
